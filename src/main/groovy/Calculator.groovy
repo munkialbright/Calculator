@@ -73,6 +73,7 @@ class Calculator {
                 def usPen = 3
                 def fra = 4
                 def chi = 5
+                def timeDifference
 
                 println "For Cameroon enter 1"
                 println "For Germany enter 2"
@@ -92,15 +93,18 @@ class Calculator {
                         System.out.println(date.toString())
                         break
                     case usPen:
-                        date.setTime(1296000)
+                        timeDifference = date.getTime() - 21600000
+                        date.setTime(timeDifference)
                         System.out.println(date.toString())
                         break
                     case fra:
-                        date.setTime(216000)
+                        timeDifference = date.getTime() - 3600000
+                        date.setTime(timeDifference)
                         System.out.println(date.toString())
                         break
                     case chi:
-                        date.setTime(1512000)
+                        timeDifference = date.getTime() - 25200000
+                        date.setTime(timeDifference)
                         System.out.println(date.toString())
                         break
                     default:
