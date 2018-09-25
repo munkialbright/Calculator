@@ -68,44 +68,46 @@ class Calculator {
 
         switch (response) {
             case y:
-                def cam = 1
-                def ger = 2
-                def usPen = 3
-                def fra = 4
-                def chi = 5
-                def timeDifference
+                def wat = 1
+                def act = 2
+                def jst = 3
+                def cet = 4
+                def pst = 5
+                def gmt = 6
 
-                println "For Cameroon enter 1"
-                println "For Germany enter 2"
-                println "For Pennsylvania enter 3"
-                println "For France enter 4"
-                println "For China enter 5"
+                println "For West African Time enter 1"
+                println "For Australian Central Time enter 2"
+                println "For Japan Standard Time enter 3"
+                println "For Central European Time enter 4"
+                println "For Pacific Time  enter 5"
+                println "For Greenwich Meridian Time enter 6"
 
                 country = getNextInt()
 
-                Date date = new Date()
-
                 switch (country) {
-                    case cam:
+                    case wat:
+                        Date date = new Date()
                         System.out.println(date.toString())
                         break
-                    case ger:
-                        System.out.println(date.toString())
+                    case act:
+                        TimeZone.setDefault(TimeZone.getTimeZone('ACT'))
+                        println new Date()
                         break
-                    case usPen:
-                        timeDifference = date.getTime() - 21600000
-                        date.setTime(timeDifference)
-                        System.out.println(date.toString())
+                    case jst:
+                        TimeZone.setDefault(TimeZone.getTimeZone('JST'))
+                        println new Date()
                         break
-                    case fra:
-                        timeDifference = date.getTime() - 3600000
-                        date.setTime(timeDifference)
-                        System.out.println(date.toString())
+                    case cet:
+                        TimeZone.setDefault(TimeZone.getTimeZone('CET'))
+                        println new Date()
                         break
-                    case chi:
-                        timeDifference = date.getTime() - 25200000
-                        date.setTime(timeDifference)
-                        System.out.println(date.toString())
+                    case pst:
+                        TimeZone.setDefault(TimeZone.getTimeZone('PST'))
+                        println new Date()
+                        break
+                    case gmt:
+                        TimeZone.setDefault(TimeZone.getTimeZone('GMT'))
+                        println new Date()
                         break
                     default:
                         println "The value entered does not correspond to the options provided."
