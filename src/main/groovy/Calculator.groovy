@@ -10,7 +10,7 @@ class Calculator {
         return getNextInt()
     }
 
-    private static void calculation(int c) {
+    private static int calculation(int c) {
         int d = 1
         int m = 2
         int a = 3
@@ -19,37 +19,30 @@ class Calculator {
 
         println "Enter the first value:"
         value1 = getNextInt()
-        println value1.class
 
         println "Enter the second value:"
         value2 = getNextInt()
-        println value2.class
 
         switch (c) {
             case d:
                 def Division = value1/value2
                 println "$value1/$value2=$Division"
-
-                break
-
+                return Division
             case m:
                 def Multiplication = value1*value2
                 println "$value1*$value2=$Multiplication"
 
-                break
-
+                return Multiplication
             case a:
                 def Addition = value1+value2
                 println "$value1+$value2=$Addition"
 
-                break
-
+                return Addition
             case s:
                 def Subtraction = value1-value2
                 println "$value1-$value2=$Subtraction"
 
-                break
-
+                return Subtraction
             default:
                 println "The value you entered did not correspond to any of the options given."
         }
@@ -120,6 +113,7 @@ class Calculator {
                 println "The value entered does not correspond to the option provided"
         }
     }
+
     static int getNextInt() {
         scanner.nextInt()
     }
